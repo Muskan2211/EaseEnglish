@@ -1,0 +1,40 @@
+<%- include("header"); -%>
+
+  <div class="contaier-fluid">
+
+    <div class="row mrow">
+      <div class="shortcsreen col-lg-6">
+			<div id="container">
+
+			    <h1>SEE YOURSELF HERE</h1>
+			    <div class="vid">
+			    	<video id="gum" playsinline autoplay muted></video>
+			    </div>
+			    <div clas="vid">
+			    	<video id="recorded" playsinline loop></video>
+			    </div>
+			    <div>
+			        <button class="mmargin btn btn-dark  " id="start">Start camera</button>
+			        <button class="mmargin btn btn-dark  "  id="record" disabled>Start Recording</button>
+			        <button class="mmargin btn btn-dark  " id="play" disabled>Play</button>
+			        <button class="mmargin btn btn-dark  "  id="download" disabled>Download</button>
+			    </div>
+
+			    <!-- <div>
+			        <h4>Media Stream Constraints options</h4>
+			        <p>Echo cancellation: <input type="checkbox" id="echoCancellation"></p>
+			    </div> 
+
+			    <div>
+			        <span id="errorMsg"></span>
+			    </div>
+			    -->
+			</div>
+      </div>
+      <div class="col-lg-6">
+        	<p><%= Ques %></p>
+           <p> <%= Quotes %></p>
+      </div>
+    </div>
+  </div>
+<%- include("footer"); -%>
