@@ -14,10 +14,16 @@
 			    	<video id="recorded" playsinline loop></video>
 			    </div>
 			    <div>
+			    	<div class="row">
+			    	<div class="col-md-6">			
 			        <button class="mmargin btn btn-dark  " id="start">Start camera</button>
 			        <button class="mmargin btn btn-dark  "  id="record" disabled>Start Recording</button>
+			        </div>
+			        <div class="col-md-6">	
 			        <button class="mmargin btn btn-dark  " id="play" disabled>Play</button>
-			        <button class="mmargin btn btn-dark  "  id="download" disabled>Download</button>
+			        <button class="mmargin btn btn-dark  " id="download" disabled>Download</button>
+			        </div>
+			        </div>
 			    </div>
 
 			    <!-- <div>
@@ -32,7 +38,26 @@
 			</div>
       </div>
       <div class="col-lg-6">
+      	<form  action="/news" method="GET">
+	      <button type="submit" class="btn btn-lg btn-dark"> NEWS</button>
+	    </form>
+	    <form  action="/" method="GET">
+	       <button type="submit" class="btn btn-lg btn-dark"> SHORT STORY</button>
+	    </form>
+	    <form  action="/poem" method="GET">
+	      <button type="submit" class="btn btn-lg btn-dark"> POEM</button>
+	    </form>
+	    <form  action="/" method="GET">
+	      <button type="submit" class="btn btn-lg btn-dark"> DIALOGUE</button>
+	    </form>
+	    <form  action="/" method="GET">
+	      <button type="submit" class="btn btn-lg btn-dark"> JOKE</button>
+	    </form>
+	    <form  action="/" method="GET">
+	      <button type="submit" class="btn btn-lg btn-dark"> QUOTES</button>
+	    </form>
         	<p><%= Ques %></p>
+
       </div>
     </div>
   </div>

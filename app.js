@@ -48,13 +48,8 @@ passport.deserializeUser(function(id, done){
 });
 
 var today = new Date();
-var options = {
-  weekday:"long",
-  month:"numeric",
-  day:"numeric",
-  year:"numeric"
-};
-var date=today.toLocaleDateString("en-US");
+var month= today.getMonth()+1;
+var date= today.getDate();
 var year=today.getFullYear();
 var islogin=false;
 
@@ -86,7 +81,7 @@ app.get("/matrix", function(req, res){
       else{
         if(foundUser){
           // let qdata, Qdata, Qdatas;
-          // https.get("https://www.abbreviations.com/services/v2/quotes.php?uid=8062&tokenid=lxdqKytAWVEQOac9&searchtype=AUTHOR&query=Maya+Angelou&format=json", function(response){
+          // https.get("", function(response){
           //   response.on("data", function(data){
           //     qdata=JSON.parse(data);
           //     Qdata=qdata.result;
@@ -106,6 +101,19 @@ app.get("/matrix", function(req, res){
 
 app.post("/matrix", function(req, res){
   
+});
+
+app.get("/poem", function(req, res){
+   https.get("https://dps-restapi.herokuapp.com/poems", function(response){
+      response.on("data", function(data){
+        //var mydate=year+"-"+month+"-"+date;
+        var qdata=JSON.parse(data); 
+        var ind=Math.floor(Math.random() * 3);
+        console.log(mydate)
+        console.log(ind);
+        console.log(qdata[ind]);
+      });
+    });
 });
 
 
