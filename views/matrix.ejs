@@ -26,7 +26,7 @@
 			        </div>
 			    </div>
 
-			    <!-- <div>
+			    <div>
 			        <h4>Media Stream Constraints options</h4>
 			        <p>Echo cancellation: <input type="checkbox" id="echoCancellation"></p>
 			    </div> 
@@ -34,30 +34,30 @@
 			    <div>
 			        <span id="errorMsg"></span>
 			    </div>
-			    -->
+			   
 			</div>
       </div>
       <div class="col-lg-6">
-      	<form  action="/news" method="GET">
-	      <button type="submit" class="btn btn-lg btn-dark"> NEWS</button>
-	    </form>
-	    <form  action="/" method="GET">
-	       <button type="submit" class="btn btn-lg btn-dark"> SHORT STORY</button>
-	    </form>
-	    <form  action="/poem" method="GET">
-	      <button type="submit" class="btn btn-lg btn-dark"> POEM</button>
-	    </form>
-	    <form  action="/" method="GET">
-	      <button type="submit" class="btn btn-lg btn-dark"> DIALOGUE</button>
-	    </form>
-	    <form  action="/" method="GET">
-	      <button type="submit" class="btn btn-lg btn-dark"> JOKE</button>
-	    </form>
-	    <form  action="/" method="GET">
-	      <button type="submit" class="btn btn-lg btn-dark"> QUOTES</button>
-	    </form>
-        	<p><%= Ques %></p>
-
+		<div class="row mrow">
+			<div class="col-md-4">	
+				<form  action="/" method="GET">
+					<button type="submit" class="btn btn-lg btn-dark"> STORY</button>
+				</form>
+			</div>
+			<div class="col-md-4">	
+				<form  action="/poem" method="GET">
+				<button type="submit" class="btn btn-lg btn-dark"> POEM</button>
+				</form>
+			</div>
+			<div class="col-md-4">	
+				<form  action="/" method="GET">
+				<button type="submit" class="btn btn-lg btn-dark"> DIALOGUE</button>
+				</form>
+			</div>
+		</div>
+		<div class="row mrow">
+			<p><%= Ques %></p>
+		</div>
       </div>
     </div>
   </div>
