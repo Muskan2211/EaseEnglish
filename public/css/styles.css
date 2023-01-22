@@ -1,7 +1,7 @@
 
 body{
   background: #eee;
-  background-image: url("https://www.transparenttextures.com/patterns/food.png");
+  background-image: url("https://www.transparenttextures.com/patterns/gray-floral.png");
 }
 
 a:link {color:grey;}
@@ -11,7 +11,7 @@ a:hover   {color:#A683E3;}
 
 /* heading of the page */
 .headers {
-  background-color: #46b3e6;
+  background-color: #0000AE;
   margin: auto -16px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   padding-right: 3.25rem;
@@ -193,4 +193,10 @@ margin-left: 1rem;
   .mmargin{
     margin-left: 3.25rem;
   }
+}
+.content{
+  padding: 1rem;
+  background-color: white;
+  width: 100%;
+  margin-top: 0.5rem;
 }

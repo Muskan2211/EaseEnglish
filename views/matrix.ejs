@@ -40,7 +40,7 @@
       <div class="col-lg-6">
 		<div class="row mrow">
 			<div class="col-md-4">	
-				<form  action="/" method="GET">
+				<form  action="/story" method="GET">
 					<button type="submit" class="btn btn-lg btn-dark"> STORY</button>
 				</form>
 			</div>
@@ -50,13 +50,15 @@
 				</form>
 			</div>
 			<div class="col-md-4">	
-				<form  action="/" method="GET">
+				<form  action="/dialogue" method="GET">
 				<button type="submit" class="btn btn-lg btn-dark"> DIALOGUE</button>
 				</form>
 			</div>
 		</div>
 		<div class="row mrow">
-			<p><%= Ques %></p>
+			<div class="content"><%= Title %></div>
+			<div class="content"><%= Poet %></div>
+			<div class="content"><%= Poem %></div>
 		</div>
       </div>
     </div>

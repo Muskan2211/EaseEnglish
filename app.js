@@ -48,8 +48,9 @@ passport.deserializeUser(function(id, done){
 });
 
 var today = new Date();
-var month= today.getMonth()+1;
-var date= today.getDate();
+var title = "";
+var poet = "";
+var poem = "";
 var year=today.getFullYear();
 var islogin=false;
 
@@ -80,19 +81,7 @@ app.get("/matrix", function(req, res){
       }
       else{
         if(foundUser){
-          // let qdata, Qdata, Qdatas;
-          // https.get("", function(response){
-          //   response.on("data", function(data){
-          //     qdata=JSON.parse(data);
-          //     Qdata=qdata.result;
-          //     Qdatas=Qdata[2].quote;
-          //     console.log(Qdatas);
-          //     console.log(typeof(Qdatas));
-          //   });
-          // });
-          // let ans=Qdatas;
-         let  question=getQuestion();
-          res.render("matrix",{yearmat:year, btntype:islogin, Ques:question});
+          res.render("matrix",{yearmat:year, btntype:islogin, Title:title, Poet:poet, Poem:poem});
         }
       }
     });
@@ -104,16 +93,54 @@ app.post("/matrix", function(req, res){
 });
 
 app.get("/poem", function(req, res){
-   https.get("https://dps-restapi.herokuapp.com/poems", function(response){
-      response.on("data", function(data){
-        //var mydate=year+"-"+month+"-"+date;
-        var qdata=JSON.parse(data); 
-        var ind=Math.floor(Math.random() * 3);
-        console.log(mydate)
-        console.log(ind);
-        console.log(qdata[ind]);
+    let chunks = [];
+    https.get("https://dpsapi.onrender.com/poems", function(response){
+      response.on('data', function(data) {
+        chunks.push(data);
+      }).on('end', function() {
+        let data   = Buffer.concat(chunks);
+        let qdata = JSON.parse(data);
+         var ind=Math.floor(Math.random() * 7);
+         title = qdata[ind].title;
+         poet = qdata[ind].poet;
+         poem = qdata[ind].poem;
       });
     });
+    res.redirect("/matrix");
+});
+
+app.get("/story", function(req, res){
+  https.get("https://dpsapi.onrender.com/story", function(response){
+    let chunks = [];
+    response.on('data', function(data) {
+      chunks.push(data);
+    }).on('end', function() {
+      let data   = Buffer.concat(chunks);
+      let qdata = JSON.parse(data);
+       var ind=Math.floor(Math.random() * 8);
+       title = qdata[ind].title;
+       poet = qdata[ind].author;
+       poem = qdata[ind].story;
+    });
+   });
+   res.redirect("/matrix");
+});
+
+app.get("/dialogue", function(req, res){
+  https.get("https://dpsapi.onrender.com/dialogue", function(response){
+    let chunks = [];
+    response.on('data', function(data) {
+      chunks.push(data);
+    }).on('end', function() {
+      let data   = Buffer.concat(chunks);
+      let qdata = JSON.parse(data);
+       var ind=Math.floor(Math.random() * 28);
+       title = qdata[ind].name;
+       poet = qdata[ind].actor;
+       poem = qdata[ind].script;
+    });
+   });
+   res.redirect("/matrix");
 });
 
 
